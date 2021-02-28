@@ -12,6 +12,7 @@
       "posts": [
         {
           "id": "post-1-1",
+          "userId": "user-1",
           "date": "2021-02-27",
           "time": "10:00:00",
           "dateTime": "2021-02-25 10:00:00",
@@ -56,6 +57,7 @@
       "posts": [
         {
           "id": "post-2-1",
+          "userId": "user-2",
           "date": "2021-02-20",
           "time": "14:34:00",
           "dateTime": "2021-02-20 14:34:00",
@@ -96,15 +98,39 @@
       "posts": [
         {
           "id": "post-3-1",
+          "userId": "user-3",
           "date": "2021-02-02",
           "time": "23:10:00",
           "dateTime": "2021-02-02 23:10:00",
           "likes": 2,
-          "location": "dbayeh",
+          "location": "Dbayeh",
           "comments": [],
           "images": [
             {
               "id": "image-3-1-1",
+              "image": ""
+            }
+          ]
+        },
+        {
+          "id": "post-3-2",
+          "userId": "user-3",
+          "date": "2021-02-07",
+          "time": "20:35:00",
+          "dateTime": "2021-02-07 20:35:00",
+          "likes": 58,
+          "location": "Beirut",
+          "comments": [
+            {
+              "id": "comment-3-2-1",
+              "dateTime": "2021-02-08 14:03:00",
+              "fullName": "jad dagher",
+              "comment": "Amazing"
+            }
+          ],
+          "images": [
+            {
+              "id": "image-3-2-1",
               "image": ""
             }
           ]
