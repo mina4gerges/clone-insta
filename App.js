@@ -22,53 +22,48 @@ const App: () => React$Node = () => {
   const Stack = createStackNavigator();
 
   return (
-    <>
-      {/*<StatusBar barStyle="dark-content" />*/}
-      {/*<SafeAreaView>*/}
-      <PostsReducer>
-        <NavigationContainer>
-          <Stack.Navigator headerLayoutPreset={'center'}>
-            <Stack.Screen
-              name="Posts"
-              component={Posts}
-              options={{
-                headerTitleAlign: 'center',
-                headerTitle: () => (
-                  <View>
-                    <ImageComp
-                      width={50}
-                      height={50}
-                      source={DEFAULT_USER_IMAGE}
-                      alt={DEFAULT_USER_IMAGE_ALT}
-                    />
-                  </View>
-                ),
-                headerRight: () => (
-                  <View style={styles.headerRight}>
-                    <IconButton
-                      iconStyle={styles.headerIcon}
-                      iconName="refresh"
-                      onPress={null}
-                    />
-                    <IconButton
-                      iconStyle={styles.headerIcon}
-                      onPress={null}
-                      iconName="message-text-outline"
-                    />
-                  </View>
-                ),
-              }}
-            />
-            <Stack.Screen
-              name="PostComments"
-              component={PostComments}
-              options={{title: 'Comments'}}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
-        {/*</SafeAreaView>*/}
-      </PostsReducer>
-    </>
+    <PostsReducer>
+      <NavigationContainer>
+        <Stack.Navigator headerLayoutPreset={'center'}>
+          <Stack.Screen
+            name="Posts"
+            component={Posts}
+            options={{
+              headerTitleAlign: 'center',
+              headerTitle: () => (
+                <View>
+                  <ImageComp
+                    width={50}
+                    height={50}
+                    source={DEFAULT_USER_IMAGE}
+                    alt={DEFAULT_USER_IMAGE_ALT}
+                  />
+                </View>
+              ),
+              headerRight: () => (
+                <View style={styles.headerRight}>
+                  <IconButton
+                    iconStyle={styles.headerIcon}
+                    iconName="refresh"
+                    onPress={null}
+                  />
+                  <IconButton
+                    iconStyle={styles.headerIcon}
+                    onPress={null}
+                    iconName="message-text-outline"
+                  />
+                </View>
+              ),
+            }}
+          />
+          <Stack.Screen
+            name="PostComments"
+            component={PostComments}
+            options={{title: 'Comments'}}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </PostsReducer>
   );
 };
 

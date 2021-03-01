@@ -10,6 +10,7 @@ import {
 
 const PostHeader = () => {
   const {fullName, image} = useUserInfo();
+
   const {
     state: {
       post: {location},
