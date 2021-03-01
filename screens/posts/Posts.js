@@ -32,7 +32,7 @@ const Posts = () => {
           height={40}
           borderRadius={50}
           alt={DEFAULT_USER_IMAGE_ALT}
-          source={loggedInUser.image ?? DEFAULT_USER_IMAGE}
+          source={loggedInUser?.image ?? DEFAULT_USER_IMAGE}
         />
       ),
     });

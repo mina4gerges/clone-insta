@@ -39,6 +39,7 @@ const PostBody = () => {
 
 const styles = StyleSheet.create({
   postBodyContainer: {
+    flex: 1,
     marginVertical: 10,
   },
 });

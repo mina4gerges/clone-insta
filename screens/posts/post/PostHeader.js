@@ -36,6 +36,7 @@ const PostHeader = () => {
 
 const styles = StyleSheet.create({
   postHeaderContainer: {
+    flex: 1,
     flexDirection: 'row',
   },
   titles: {
