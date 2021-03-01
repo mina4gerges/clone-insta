@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
-import {View, TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/AntDesign';
 import {PostContext} from '../../../context/postContext';
 import {onCommentPress, onLikePress} from '../../../actions/postActions';
 import {PostsContext} from '../../../context/postsContext';
+import IconButton from '../../../components/IconWithText';
 
 const PostFooter = () => {
   const navigation = useNavigation();
@@ -27,28 +27,21 @@ const PostFooter = () => {
 
   return (
     <View style={styles.postFooterContainer}>
-      <TouchableOpacity
-        style={[styles.button, styles.buttonPadding]}
-        onPress={onLikePress(
-          dispatchPost,
-          dispatchPosts,
-          postId,
-          likedPostIds,
-        )}>
-        <Icon
-          size={25}
-          style={styles.likesButton}
-          name={`${isPostAlreadyLiked ? 'heart' : 'hearto'}`}
-        />
-        <Text style={styles.likesButton}>{` ${likes}`}</Text>
-      </TouchableOpacity>
+      <IconButton
+        text={` ${likes}`}
+        iconStyle={styles.likesButton}
+        textStyle={styles.likesButton}
+        iconName={`${isPostAlreadyLiked ? 'heart' : 'heart-outline'}`}
+        onPress={onLikePress(dispatchPost, dispatchPosts, postId, likedPostIds)}
+      />
 
-      <TouchableOpacity
-        style={[styles.button, styles.buttonPadding]}
-        onPress={onCommentPress(navigation, postId)}>
-        <Icon size={25} style={styles.commentsButton} name="plussquare" />
-        <Text style={styles.commentsButton}>{` ${comments.length}`}</Text>
-      </TouchableOpacity>
+      <IconButton
+        iconName="comment-text-outline"
+        text={` ${comments.length}`}
+        iconStyle={styles.commentsButton}
+        textStyle={styles.commentsButton}
+        onPress={onCommentPress(navigation, postId)}
+      />
     </View>
   );
 };
@@ -57,12 +50,7 @@ const styles = StyleSheet.create({
   postFooterContainer: {
     flexDirection: 'row',
   },
-  buttonPadding: {
-    paddingHorizontal: 5,
-  },
-  button: {
-    flexDirection: 'row',
-  },
+
   likesButton: {
     fontWeight: 'bold',
     color: 'red',

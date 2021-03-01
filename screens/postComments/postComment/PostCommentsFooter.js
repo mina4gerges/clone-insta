@@ -14,31 +14,20 @@ const PostCommentsFooter = () => {
         style={styles.textInput}
         onChangeText={(text) => onChangeText(text)}
       />
-      <Button
-        title="Send"
-        style={styles.button}
-        onPress={() => console.log('send')}
-      />
+      <Button title="Send" onPress={null} color="red" />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   postCommentContainer: {
-    flex: 1,
-    margin: 10,
     flexDirection: 'row',
   },
   textInput: {
     flex: 2,
     padding: 5,
-    height: 40,
     borderWidth: 1,
     borderColor: 'gray',
-  },
-  button: {
-    flex: 1,
-    backgroundColor: 'red',
   },
 });
 

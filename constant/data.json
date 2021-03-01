@@ -5,7 +5,7 @@
     "lastName": "gerges",
     "fullName": "mina gerges",
     "userName": "mina.gerges",
-    "image": "",
+    "image": null,
     "likedPostIds": [
       "post-1-1",
       "post-3-2"
@@ -23,7 +23,7 @@
         "lastName": "aoun aoun",
         "fullName": "rania aoun aoun",
         "userName": "rania.aounAoun",
-        "image": ""
+        "image":null
       },
       "posts": [
         {
@@ -33,7 +33,7 @@
           "time": "10:00:00",
           "dateTime": "2021-02-25 10:00:00",
           "likes": 20,
-          "location": "jounieh",
+          "location": "Jounieh",
           "comments": [
             {
               "id": "comment-1-1-1",
@@ -51,11 +51,11 @@
           "images": [
             {
               "id": "image-1-1-1",
-              "image": ""
+              "image": null
             },
             {
               "id": "image-1-1-2",
-              "image": ""
+              "image": null
             }
           ]
         }
@@ -68,7 +68,7 @@
         "lastName": "amhaz",
         "fullName": "safi amhaz",
         "userName": "safi.amhaz",
-        "image": ""
+        "image": null
       },
       "posts": [
         {
@@ -78,7 +78,7 @@
           "time": "14:34:00",
           "dateTime": "2021-02-20 14:34:00",
           "likes": 6,
-          "location": "beirut",
+          "location": "Beirut",
           "comments": [
             {
               "id": "comment-2-1-1",
@@ -96,7 +96,7 @@
           "images": [
             {
               "id": "image-2-1-1",
-              "image": ""
+              "image": null
             }
           ]
         }
@@ -109,7 +109,7 @@
         "lastName": "aoun",
         "fullName": "jeanclaude aoun",
         "userName": "jeanclaude.aoun",
-        "image": ""
+        "image": null
       },
       "posts": [
         {
@@ -124,7 +124,7 @@
           "images": [
             {
               "id": "image-3-1-1",
-              "image": ""
+              "image": null
             }
           ]
         },
@@ -147,7 +147,7 @@
           "images": [
             {
               "id": "image-3-2-1",
-              "image": ""
+              "image": null
             }
           ]
         }
