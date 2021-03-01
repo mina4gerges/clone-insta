@@ -1,5 +1,11 @@
 import response from '../constant/data.json';
-import {ADD_POST_ID, FETCH_DATA, REMOVE_POST_ID} from '../constant/actionsType';
+import {
+  ADD_COMMENT,
+  ADD_POST_ID,
+  FETCH_DATA,
+  REMOVE_POST_ID,
+} from '../constant/actionsType';
+import {getCurentDateTime} from '../global/functions';
 
 const postsReducer = (state, action) => {
   switch (action.type) {
@@ -50,6 +56,39 @@ const postsReducer = (state, action) => {
           ...state.loggedInUser,
           likedPostIds: newLikedPostIds,
         },
+      };
+
+    case ADD_COMMENT:
+      const foundPost = state.posts.find(
+        (post) => post.id === action.payload.postId,
+      );
+
+      let newComments = foundPost.comments;
+
+      // Start get new comment Id
+      const lastComment = newComments[newComments.length - 1].id;
+      const splitLastComment = lastComment.split('-');
+      const lastCommentId = splitLastComment[splitLastComment.length - 1];
+      splitLastComment[splitLastComment.length - 1] = `${+lastCommentId + 1}`;
+      const newCommentId = splitLastComment.join('-');
+      // End get new comment Id
+
+      newComments.push({
+        id: newCommentId,
+        dateTime: getCurentDateTime(),
+        fullName: action.payload.fullName,
+        comment: action.payload.newComment,
+      });
+
+      return {
+        ...state,
+        posts: [
+          ...state.posts.map((post) =>
+            post.id === action.payload.postId
+              ? {...post, comments: newComments}
+              : post,
+          ),
+        ],
       };
 
     default:
