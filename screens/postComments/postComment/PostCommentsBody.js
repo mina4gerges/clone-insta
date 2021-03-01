@@ -13,6 +13,8 @@ const PostCommentsBody = () => {
     state: {posts},
   } = useContext(PostsContext);
 
+  let flatList;
+
   const postFound = posts.find((post) => post.id === postId);
   const comments = postFound.comments;
 
@@ -20,7 +22,9 @@ const PostCommentsBody = () => {
     <View style={styles.postCommentContainer}>
       <FlatList
         data={comments}
+        ref={(ref) => (flatList = ref)}
         keyExtractor={(item) => item.id}
+        onContentSizeChange={() => flatList?.scrollToEnd({animated: true})}
         renderItem={({item}) => (
           <PostComment
             comment={item.comment}
