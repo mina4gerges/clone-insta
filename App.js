@@ -11,9 +11,9 @@ import {StatusBar} from 'react-native';
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import Posts from './screens/posts/Posts';
 import {PostsReducer} from './context/postsContext';
-import PostComment from './screens/posts/PostComment';
+import Posts from './screens/posts/Posts';
+import PostComments from './screens/postComments/PostComments';
 
 const App: () => React$Node = () => {
   const Stack = createStackNavigator();
@@ -30,8 +30,8 @@ const App: () => React$Node = () => {
               options={{title: 'Home'}}
             />
             <Stack.Screen
-              name="PostComment"
-              component={PostComment}
+              name="PostComments"
+              component={PostComments}
               options={{title: 'Comments'}}
             />
           </Stack.Navigator>
