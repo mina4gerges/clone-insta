@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, ActivityIndicator, StyleSheet} from 'react-native';
 
-const LoadingStatus = () => {
+const LoadingSpinner = () => {
   return (
     <View style={styles.loadingStatusContainer}>
       <ActivityIndicator size="large" />
@@ -16,4 +16,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoadingStatus;
+export default LoadingSpinner;

@@ -5,7 +5,7 @@ import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
 import {PostContext} from '../../../context/postContext';
 import {UPDATE_POST} from '../../../constant/actionsType';
-import LoadingStatus from '../../../components/LoadingStatus';
+import LoadingSpinner from '../../../components/LoadingSpinner';
 
 const Post = ({post}) => {
   const {
@@ -23,7 +23,7 @@ const Post = ({post}) => {
   return (
     <View style={styles.postContainer}>
       {id === -1 ? (
-        <LoadingStatus />
+        <LoadingSpinner />
       ) : (
         <>
           <PostHeader />
