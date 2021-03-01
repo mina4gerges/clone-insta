@@ -7,19 +7,37 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
+import 'react-native-gesture-handler';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import Posts from './screens/posts/Posts';
 import {PostsReducer} from './context/postsContext';
+import PostComment from './screens/posts/PostComment';
 
 const App: () => React$Node = () => {
+  const Stack = createStackNavigator();
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <PostsReducer>
-          <Posts />
-        </PostsReducer>
-      </SafeAreaView>
+      {/*<SafeAreaView>*/}
+      <PostsReducer>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="Posts"
+              component={Posts}
+              options={{title: 'Home'}}
+            />
+            <Stack.Screen
+              name="PostComment"
+              component={PostComment}
+              options={{title: 'Comments'}}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+        {/*</SafeAreaView>*/}
+      </PostsReducer>
     </>
   );
 };

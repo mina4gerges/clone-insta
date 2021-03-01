@@ -26,4 +26,6 @@ export const onLikePress = (
   });
 };
 
-export const onCommentPress = () => () => {};
+export const onCommentPress = (navigation, postId) => () => {
+  navigation.navigate('PostComment', {postId});
+};

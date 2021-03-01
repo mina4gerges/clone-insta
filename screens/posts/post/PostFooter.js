@@ -1,10 +1,13 @@
 import React, {useContext} from 'react';
 import {View, Button, StyleSheet} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {PostContext} from '../../../context/postContext';
 import {onCommentPress, onLikePress} from '../../../actions/postActions';
 import {PostsContext} from '../../../context/postsContext';
 
 const PostFooter = () => {
+  const navigation = useNavigation();
+
   const {
     dispatch: dispatchPost,
     state: {
@@ -28,7 +31,7 @@ const PostFooter = () => {
       />
       <Button
         style={styles.button}
-        onPress={onCommentPress(dispatchPost)}
+        onPress={onCommentPress(navigation, postId)}
         title={`Comment ${comments.length}`}
       />
     </View>
