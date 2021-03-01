@@ -59,6 +59,8 @@ const postsReducer = (state, action) => {
       };
 
     case ADD_COMMENT:
+      let newCommentId;
+
       const foundPost = state.posts.find(
         (post) => post.id === action.payload.postId,
       );
@@ -66,11 +68,15 @@ const postsReducer = (state, action) => {
       let newComments = foundPost.comments;
 
       // Start get new comment Id
-      const lastComment = newComments[newComments.length - 1].id;
-      const splitLastComment = lastComment.split('-');
-      const lastCommentId = splitLastComment[splitLastComment.length - 1];
-      splitLastComment[splitLastComment.length - 1] = `${+lastCommentId + 1}`;
-      const newCommentId = splitLastComment.join('-');
+      if (newComments.length === 0) {
+        newCommentId = `${foundPost.id.replace('post', 'comment')}-1`;
+      } else {
+        const lastComment = newComments[newComments.length - 1].id;
+        const splitLastComment = lastComment.split('-');
+        const lastCommentId = splitLastComment[splitLastComment.length - 1];
+        splitLastComment[splitLastComment.length - 1] = `${+lastCommentId + 1}`;
+        newCommentId = splitLastComment.join('-');
+      }
       // End get new comment Id
 
       newComments.push({
