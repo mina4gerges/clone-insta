@@ -2,7 +2,11 @@ import React, {createContext, useReducer} from 'react';
 import postsReducer from '../reducer/postsReducer';
 
 const initialValue = {
+  // Logged in user data
+  loggedInUser: {},
+  // All users data that added a post
   users: [],
+  // All app posts
   posts: [],
 };
 

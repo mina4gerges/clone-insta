@@ -1,12 +1,28 @@
 {
+  "loggedInUser": {
+    "id": "user-10",
+    "name": "",
+    "lastName": "gerges",
+    "fullName": "mina gerges",
+    "userName": "mina.gerges",
+    "image": "",
+    "likedPostIds": [
+      "post-1-1",
+      "post-3-2"
+    ],
+    "commentedPostsId": [
+      "comment-1-1-2",
+      "comment-2-1-1"
+    ]
+  },
   "data": [
     {
       "user": {
         "id": "user-1",
-        "name": "mina",
-        "lastName": "gerges",
-        "fullName": "mina gerges",
-        "userName": "mina.gerges",
+        "name": "rania",
+        "lastName": "aoun aoun",
+        "fullName": "rania aoun aoun",
+        "userName": "rania.aounAoun",
         "image": ""
       },
       "posts": [
@@ -28,7 +44,7 @@
             {
               "id": "comment-1-1-2",
               "dateTime": "2021-02-26 20:12:00",
-              "fullName": "amine amine",
+              "fullName": "mina gerges",
               "comment": "Gorgeous"
             }
           ],
@@ -48,10 +64,10 @@
     {
       "user": {
         "id": "user-2",
-        "name": "rania",
-        "lastName": "aoun aoun",
-        "fullName": "rania aoun aoun",
-        "userName": "rania.aounAoun",
+        "name": "safi",
+        "lastName": "amhaz",
+        "fullName": "safi amhaz",
+        "userName": "safi.amhaz",
         "image": ""
       },
       "posts": [
@@ -67,7 +83,7 @@
             {
               "id": "comment-2-1-1",
               "dateTime": "2021-02-21 08:20:00",
-              "fullName": "fady moukawam",
+              "fullName": "mina gerges",
               "comment": "Cool"
             },
             {

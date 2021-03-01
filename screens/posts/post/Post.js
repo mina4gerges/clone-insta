@@ -5,9 +5,16 @@ import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
 import {PostContext} from '../../../context/postContext';
 import {UPDATE_POST} from '../../../constant/actionsType';
+import LoadingStatus from '../../../components/LoadingStatus';
 
 const Post = ({post}) => {
-  const {dispatch} = useContext(PostContext);
+  const {
+    dispatch,
+    state: {
+      // Set an id by default equal to -1 in behave to add spinner indicator
+      post: {id = -1},
+    },
+  } = useContext(PostContext);
 
   useEffect(() => {
     dispatch({type: UPDATE_POST, payload: {post}});
@@ -15,9 +22,15 @@ const Post = ({post}) => {
 
   return (
     <View style={styles.postContainer}>
-      <PostHeader />
-      <PostBody />
-      <PostFooter />
+      {id === -1 ? (
+        <LoadingStatus />
+      ) : (
+        <>
+          <PostHeader />
+          <PostBody />
+          <PostFooter />
+        </>
+      )}
     </View>
   );
 };
@@ -25,6 +38,7 @@ const Post = ({post}) => {
 const styles = StyleSheet.create({
   postContainer: {
     margin: 4,
+    height: 470,
   },
 });
 

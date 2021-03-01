@@ -2,18 +2,18 @@ import React, {useEffect, useContext} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {PostsContext} from '../../context/postsContext';
-import {FETCH_DATA} from '../../constant/actionsType';
 import Post from './post/Post';
 import {PostProvider} from '../../context/postContext';
+import {fetchData} from '../../actions/postsActions';
 
 const Posts = () => {
   const {
     dispatch,
-    state: {posts},
+    state: {posts = []},
   } = useContext(PostsContext);
 
   useEffect(() => {
-    dispatch({type: FETCH_DATA});
+    fetchData(dispatch);
   }, [dispatch]);
 
   return (

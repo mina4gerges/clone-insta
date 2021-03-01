@@ -2,6 +2,7 @@ import React, {useReducer, createContext} from 'react';
 import postReducer from '../reducer/postReducer';
 
 const initialValue = {
+  // Post data
   post: {},
 };
 
