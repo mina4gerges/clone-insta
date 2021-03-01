@@ -34,4 +34,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PostComment;
+export default React.memo(PostComment);

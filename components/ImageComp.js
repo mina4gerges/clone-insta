@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ImageCom;
+export default React.memo(ImageCom);
