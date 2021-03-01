@@ -20,8 +20,9 @@ const PostHeader = () => {
   return (
     <View style={styles.postHeaderContainer}>
       <ImageComp
-        width={35}
-        height={35}
+        width={45}
+        height={45}
+        borderRadius={50}
         source={image ?? DEFAULT_USER_IMAGE}
         alt={DEFAULT_USER_IMAGE_ALT}
       />

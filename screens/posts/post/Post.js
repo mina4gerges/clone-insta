@@ -37,8 +37,7 @@ const Post = ({post}) => {
 
 const styles = StyleSheet.create({
   postContainer: {
-    margin: 4,
-    height: 480,
+    marginVertical: 5,
   },
 });
 

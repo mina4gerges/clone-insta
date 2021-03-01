@@ -31,14 +31,13 @@ const App: () => React$Node = () => {
             options={{
               headerTitleAlign: 'center',
               headerTitle: () => (
-                <View>
-                  <ImageComp
-                    width={50}
-                    height={50}
-                    source={DEFAULT_USER_IMAGE}
-                    alt={DEFAULT_USER_IMAGE_ALT}
-                  />
-                </View>
+                <ImageComp
+                  width={50}
+                  height={50}
+                  borderRadius={50}
+                  source={DEFAULT_USER_IMAGE}
+                  alt={DEFAULT_USER_IMAGE_ALT}
+                />
               ),
               headerRight: () => (
                 <View style={styles.headerRight}>
