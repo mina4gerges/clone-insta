@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
-import {View, Button, StyleSheet} from 'react-native';
+import {View, TouchableOpacity, Text, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/AntDesign';
 import {PostContext} from '../../../context/postContext';
 import {onCommentPress, onLikePress} from '../../../actions/postActions';
 import {PostsContext} from '../../../context/postsContext';
@@ -22,18 +23,32 @@ const PostFooter = () => {
     },
   } = useContext(PostsContext);
 
+  const isPostAlreadyLiked = likedPostIds.includes(postId);
+
   return (
     <View style={styles.postFooterContainer}>
-      <Button
-        style={styles.button}
-        title={`Like ${likes}`}
-        onPress={onLikePress(dispatchPost, dispatchPosts, postId, likedPostIds)}
-      />
-      <Button
-        style={styles.button}
-        onPress={onCommentPress(navigation, postId)}
-        title={`Comment ${comments.length}`}
-      />
+      <TouchableOpacity
+        style={[styles.button, styles.buttonPadding]}
+        onPress={onLikePress(
+          dispatchPost,
+          dispatchPosts,
+          postId,
+          likedPostIds,
+        )}>
+        <Icon
+          size={25}
+          style={styles.likesButton}
+          name={`${isPostAlreadyLiked ? 'heart' : 'hearto'}`}
+        />
+        <Text style={styles.likesButton}>{` ${likes}`}</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={[styles.button, styles.buttonPadding]}
+        onPress={onCommentPress(navigation, postId)}>
+        <Icon size={25} style={styles.commentsButton} name="plussquare" />
+        <Text style={styles.commentsButton}>{` ${comments.length}`}</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -42,14 +57,19 @@ const styles = StyleSheet.create({
   postFooterContainer: {
     flexDirection: 'row',
   },
+  buttonPadding: {
+    paddingHorizontal: 5,
+  },
   button: {
-    backgroundColor: 'red',
+    flexDirection: 'row',
   },
-  likedPost: {
-    color: 'green',
-  },
-  noLikedPost: {
+  likesButton: {
+    fontWeight: 'bold',
     color: 'red',
+  },
+  commentsButton: {
+    fontWeight: 'bold',
+    color: '#8B008B',
   },
 });
 

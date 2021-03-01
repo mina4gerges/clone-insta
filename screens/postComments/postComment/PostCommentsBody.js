@@ -16,9 +16,6 @@ const PostCommentsBody = () => {
   const postFound = posts.find((post) => post.id === postId);
   const comments = postFound.comments;
 
-  console.log('postFound', postFound);
-  console.log('comments', comments);
-
   return (
     <View style={styles.postCommentContainer}>
       <FlatList
