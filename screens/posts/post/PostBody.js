@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {View, FlatList, StyleSheet} from 'react-native';
+import {View, Text, FlatList, StyleSheet} from 'react-native';
 import ImageComp from '../../../components/ImageComp';
 import {DEFAULT_IMAGE, DEFAULT_IMAGE_ALT} from '../../../constant/default';
 import {PostContext} from '../../../context/postContext';
@@ -7,7 +7,7 @@ import {PostContext} from '../../../context/postContext';
 const PostBody = () => {
   const {
     state: {
-      post: {images},
+      post: {images, comments},
     },
   } = useContext(PostContext);
 
@@ -33,6 +33,21 @@ const PostBody = () => {
           )}
         />
       )}
+      {/*Comment section*/}
+      {comments.length !== 0 && (
+        <View style={styles.commentsContainer}>
+          <FlatList
+            data={comments}
+            keyExtractor={(item) => item.id}
+            renderItem={({item}) => (
+              <View style={styles.commentContainer}>
+                <Text style={styles.commentFullName}>{item.fullName}: </Text>
+                <Text style={styles.commentText}>{item.comment}</Text>
+              </View>
+            )}
+          />
+        </View>
+      )}
     </View>
   );
 };
@@ -41,6 +56,23 @@ const styles = StyleSheet.create({
   postBodyContainer: {
     flex: 1,
     marginVertical: 10,
+  },
+  commentsContainer: {
+    padding: 5,
+    backgroundColor: '#eee',
+  },
+  commentContainer: {
+    flexDirection: 'row',
+    padding: 2,
+    fontWeight: 'bold',
+  },
+  commentFullName: {
+    fontSize: 12,
+    textTransform: 'capitalize',
+    fontWeight: 'bold',
+  },
+  commentText: {
+    fontSize: 12,
   },
 });
 
