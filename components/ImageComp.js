@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Dimensions, Image, StyleSheet} from 'react-native';
+import {View, Dimensions, Image} from 'react-native';
 import LoadingSpinner from './LoadingSpinner';
 
 const win = Dimensions.get('window');
@@ -14,17 +14,21 @@ const ImageCom = ({
   borderRadius = 0,
   height = 1000 * ratio,
 }) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const isSourceFromUri =
     typeof source === 'string' && source.startsWith('http');
 
   return (
-    <View styles={styles.imgContainer}>
+    <View>
+      {isLoading && (
+        <View style={{width, height}}>
+          <LoadingSpinner />
+        </View>
+      )}
       <Image
         alt={alt}
-        onLoadEnd={() => setIsLoading(true)}
-        onLoadStart={() => setIsLoading(true)}
+        onLoadEnd={() => setIsLoading(false)}
         style={{
           width: isLoading ? 0 : width,
           height: isLoading ? 0 : height,
@@ -32,19 +36,8 @@ const ImageCom = ({
         }}
         source={isSourceFromUri ? {uri: source} : source}
       />
-      {isLoading && (
-        <View style={{width, height}}>
-          <LoadingSpinner />
-        </View>
-      )}
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  imgContainer: {
-    backgroundColor: 'red',
-  },
-});
 
 export default React.memo(ImageCom);
