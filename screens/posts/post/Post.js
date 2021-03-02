@@ -16,10 +16,13 @@ const Post = ({post}) => {
     },
   } = useContext(PostContext);
 
+  // Set each post into the context
   useEffect(() => {
     dispatch({type: UPDATE_POST, payload: {post}});
   }, [post, dispatch]);
 
+  // Post screen divided to 3 components
+  // Header, Body and Footer
   return (
     <View style={styles.postContainer}>
       {id === -1 ? (

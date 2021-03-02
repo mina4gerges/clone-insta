@@ -5,6 +5,7 @@ import LoadingSpinner from './LoadingSpinner';
 const win = Dimensions.get('window');
 const ratio = win.width / 1000; //1000 is actual image width
 
+// Image component that fetch data from network or static path and display spinner while fetching the image
 const ImageCom = ({
   source,
   alt,

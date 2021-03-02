@@ -22,15 +22,14 @@ const PostCommentsFooter = () => {
     params: {postId},
   } = useRoute();
 
-  const onChangeText = (text) => {
-    setValue(text);
-  };
+  const onChangeText = (text) => setValue(text);
 
   const onSendPress = () => {
     addComment(dispatch, postId, value, loggedInUser);
     setValue('');
   };
 
+  // Display TextInput and button to add a new comment
   return (
     <View style={styles.postCommentContainer}>
       <TextInput

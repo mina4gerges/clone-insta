@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+// Component that contains an icon with a clickable button
 const IconButton = ({
   onPress,
   iconName,

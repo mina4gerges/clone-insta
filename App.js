@@ -17,6 +17,7 @@ const App = () => {
     <PostsReducer>
       <NavigationContainer>
         <Stack.Navigator headerLayoutPreset={'center'}>
+          {/*Post Screen*/}
           <Stack.Screen
             name="Posts"
             component={Posts}
@@ -47,6 +48,7 @@ const App = () => {
               ),
             }}
           />
+          {/*Comments Screen*/}
           <Stack.Screen
             name="PostComments"
             component={PostComments}

@@ -20,10 +20,12 @@ const Posts = () => {
     state: {loggedInUser = {}, posts = []},
   } = useContext(PostsContext);
 
+  // Fetch posts data
   useEffect(() => {
     fetchData(dispatch);
   }, [dispatch]);
 
+  // Set user image in the header
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: () => (
@@ -38,6 +40,7 @@ const Posts = () => {
     });
   }, [loggedInUser.image, navigation]);
 
+  // Display all posts in a FlatList
   return (
     <View style={styles.body}>
       <FlatList
@@ -45,6 +48,7 @@ const Posts = () => {
         keyExtractor={(item) => item.id}
         style={styles.scrollView}
         renderItem={({item}) => (
+          // Wrap each post in a provider
           <PostProvider key={item.id}>
             <Post post={item} />
           </PostProvider>

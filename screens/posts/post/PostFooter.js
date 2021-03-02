@@ -23,8 +23,10 @@ const PostFooter = () => {
     },
   } = useContext(PostsContext);
 
+  // Test if the post is liked by the logged in user
   const isPostAlreadyLiked = likedPostIds.includes(postId);
 
+  // Display like and comment icons
   return (
     <View style={styles.postFooterContainer}>
       <IconButton

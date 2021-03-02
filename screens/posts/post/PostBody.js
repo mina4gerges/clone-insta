@@ -11,6 +11,7 @@ const PostBody = () => {
     },
   } = useContext(PostContext);
 
+  // Display post images and comments
   return (
     <View style={styles.postBodyContainer}>
       {images.length === 1 ? (

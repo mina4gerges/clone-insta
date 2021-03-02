@@ -1,6 +1,7 @@
 import React, {useReducer, createContext} from 'react';
 import postReducer from '../reducer/postReducer';
 
+// Post context, contains 'post' detail (comments, likes, ...)
 const initialValue = {
   // Post data
   post: {},

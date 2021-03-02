@@ -2,6 +2,7 @@ import {useState, useEffect, useContext} from 'react';
 import {PostsContext} from '../context/postsContext';
 import {PostContext} from '../context/postContext';
 
+// Custom hook to get useInfo that added a post
 const useUserInfo = () => {
   const [useInfo, setUserInfo] = useState({});
 

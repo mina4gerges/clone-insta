@@ -17,6 +17,7 @@ const PostHeader = () => {
     },
   } = useContext(PostContext);
 
+  // Display fullName and location of the user that added the post
   return (
     <View style={styles.postHeaderContainer}>
       <ImageComp

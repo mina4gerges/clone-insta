@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, ActivityIndicator, StyleSheet} from 'react-native';
 
+// Component that contains a loadingSpinner
 const LoadingSpinner = () => {
   return (
     <View style={styles.loadingStatusContainer}>

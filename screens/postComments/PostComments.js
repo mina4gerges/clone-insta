@@ -3,6 +3,8 @@ import {View, StyleSheet} from 'react-native';
 import PostCommentsBody from './postComment/PostCommentsBody';
 import PostCommentsFooter from './postComment/PostCommentsFooter';
 
+// Comments screen divided to 2 components
+// Body and Footer
 const PostComments = () => {
   return (
     <View style={styles.postCommentContainer}>

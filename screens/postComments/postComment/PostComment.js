@@ -1,6 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
+// Display comment detail
+// fullName of the user that added the comment
+// and comment text
+// and dateTime of the comment
 const PostComment = ({comment, dateTime, fullName}) => {
   return (
     <View style={styles.postCommentContainer}>

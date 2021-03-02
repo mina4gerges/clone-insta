@@ -9,6 +9,7 @@ import {getCurentDateTime} from '../global/functions';
 
 const postsReducer = (state, action) => {
   switch (action.type) {
+    // Fetch posts data to 'loggedInUser', all 'users' all users that added a post and 'posts' added by the users
     case FETCH_DATA:
       return {
         ...state,
@@ -61,10 +62,12 @@ const postsReducer = (state, action) => {
     case ADD_COMMENT:
       let newCommentId;
 
+      // Found post detail
       const foundPost = state.posts.find(
         (post) => post.id === action.payload.postId,
       );
 
+      // Found comments that already exists
       let newComments = foundPost.comments;
 
       // Start get new comment Id
@@ -79,6 +82,7 @@ const postsReducer = (state, action) => {
       }
       // End get new comment Id
 
+      // Add new comment object
       newComments.push({
         id: newCommentId,
         dateTime: getCurentDateTime(),
@@ -86,6 +90,7 @@ const postsReducer = (state, action) => {
         comment: action.payload.newComment,
       });
 
+      // Update the comments array
       return {
         ...state,
         posts: [

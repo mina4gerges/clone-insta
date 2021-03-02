@@ -15,9 +15,11 @@ const PostCommentsBody = () => {
 
   let flatList;
 
+  // Find all comments
   const postFound = posts.find((post) => post.id === postId);
   const comments = postFound.comments;
 
+  // Display all comments into a FlatList
   return (
     <View style={styles.postCommentContainer}>
       <FlatList
