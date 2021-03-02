@@ -4,8 +4,9 @@ React native application cloning instagram
 
 1. [Installation](#installation)
 2. [Run The App](#runTheApp)
-2. [Build APK](#buildAPK)
-3. [Development environment](#developementEnvirement)
+3. [Build APK](#buildAPK)
+4. [Development environment](#developementEnvirement)
+5. [ScreenShots](#screenShots)
 
 - <h2 name="installation">Installation</h2>
 
@@ -38,4 +39,9 @@ React native application cloning instagram
     - Devices: Iphone 11 (Simulator ios 14.2) and Pixel 4 XL API 30 (Emulator)
   
     - Editors: IntelliJ v2020.3.2 and Xcode Version 12.2
-    
+
+- <h2 name="screenShots">ScreenShots</h2>
+
+  Android Home | Android Comments
+    :-----------:|:-----------------: 
+  ![androidHome](screenshots/android-home.png?raw=true) | ![androidComments](screenshots/android-comments.png?raw=true)
