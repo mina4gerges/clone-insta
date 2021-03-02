@@ -4,7 +4,7 @@ import {View, ActivityIndicator, StyleSheet} from 'react-native';
 const LoadingSpinner = () => {
   return (
     <View style={styles.loadingStatusContainer}>
-      <ActivityIndicator size="large" />
+      <ActivityIndicator size="large" color="blue" />
     </View>
   );
 };
