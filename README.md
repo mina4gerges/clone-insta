@@ -46,4 +46,4 @@ React native application cloning instagram
 
   Android Home | Android Comments
     :-----------:|:-----------------: 
-  ![androidHome](screenshots/android-home.png?raw=true) | ![androidComments](screenshots/android-comments.png?raw=true)
+  ![androidHome](screenshots/android-home.PNG?raw=true) | ![androidComments](screenshots/android-comments.PNG?raw=true)
