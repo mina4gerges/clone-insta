@@ -25,7 +25,9 @@ React native application cloning instagram
 
   - cd android
 
-  - ./gradlew bundleRelease
+  - **Linux and Mac** ./gradlew bundleRelease
+
+  - **Windows** gradlew bundleRelease
 
 - <h2 name="developementEnvirement">Development environment</h2>
 
