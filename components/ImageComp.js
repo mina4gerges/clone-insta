@@ -3,7 +3,8 @@ import {View, Dimensions, Image, StyleSheet} from 'react-native';
 import LoadingSpinner from './LoadingSpinner';
 
 const win = Dimensions.get('window');
-const ratio = win.width / 1000; //1000 is actual image width
+//1000 is actual image width
+const ratio = win.width / 1000;
 
 // Image component that fetch data from network or static path and display spinner while fetching the image
 const ImageCom = ({
@@ -24,7 +25,6 @@ const ImageCom = ({
         alt={alt}
         onLoadEnd={() => setIsLoading(true)}
         onLoadStart={() => setIsLoading(true)}
-        // loadingIndicatorSource={isLoading ? [1] : null}
         style={{
           width: isLoading ? 0 : width,
           height: isLoading ? 0 : height,
