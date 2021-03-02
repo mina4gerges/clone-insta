@@ -1,5 +1,5 @@
 import React, {useEffect, useContext, useLayoutEffect} from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {useNavigation} from '@react-navigation/native';
 import {PostsContext} from '../../context/postsContext';
@@ -39,25 +39,24 @@ const Posts = () => {
   }, [loggedInUser.image, navigation]);
 
   return (
-    <ScrollView
-      contentInsetAdjustmentBehavior="automatic"
-      style={styles.scrollView}>
-      <View style={styles.body}>
-        {posts.map((post) => (
-          <PostProvider key={post.id}>
-            <Post post={post} />
+    <View style={styles.body}>
+      <FlatList
+        data={posts}
+        keyExtractor={(item) => item.id}
+        style={styles.scrollView}
+        renderItem={({item}) => (
+          <PostProvider key={item.id}>
+            <Post post={item} />
           </PostProvider>
-        ))}
-      </View>
-    </ScrollView>
+        )}
+      />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
   body: {
+    flex: 1,
     backgroundColor: Colors.white,
   },
 });

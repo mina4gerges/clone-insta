@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import 'react-native-gesture-handler';
@@ -18,7 +10,7 @@ import IconButton from './components/IconWithText';
 import ImageComp from './components/ImageComp';
 import {DEFAULT_USER_IMAGE, DEFAULT_USER_IMAGE_ALT} from './constant/default';
 
-const App: () => React$Node = () => {
+const App = () => {
   const Stack = createStackNavigator();
 
   return (
